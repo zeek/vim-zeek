@@ -1,6 +1,6 @@
 # An example of the Zeek scripting language.
 
-##! A Zeexygen-style summmary comment.
+##! A Zeekygen-style summmary comment.
 
 # TODO: just an example of a todo-indicator
 
@@ -17,9 +17,9 @@ export {
 
   redef enum SimpleEnum += {
 
-    ## A Zeexygen-style comment.
+    ## A Zeekygen-style comment.
     FOUR,
-    FIVE, ##< A Zeexygen-style comment.
+    FIVE, ##< A Zeekygen-style comment.
   };
 
   type SimpleRecord: record {
