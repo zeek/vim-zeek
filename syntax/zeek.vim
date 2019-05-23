@@ -40,8 +40,12 @@ syn keyword zeekBool T F
 syn match zeekInt /\v<\d+>/
 syn match zeekInt /\v<0x[0-9a-fA-F]+>/
 syn match zeekPort /\v<\d{1,5}>\/<(udp|tcp|icmp|unknown)>/
-syn match zeekFloat /\v<((\d*\.\d*)([eE][+-]?\d+)?)|((\d*)([eE][+-]?\d+))|(\d*\.\d*)>/
-syn match zeekInterval /\v<(\d+|((\d*\.\d*)([eE][+-]?\d+)?)|((\d*)([eE][+-]?\d+))|(\d*\.\d*))\s*(day|hr|min|msec|usec|sec)s?>/
+
+syn match zeekFloat /\v<((\d+\.\d*)|(\d*\.\d+))([eE][+-]?\d+)?>/
+syn match zeekFloat /\v<(\d+)([eE][+-]?\d+)>/
+
+syn match zeekInterval /\v<((\d+)|(\d+\.\d*)|(\d*\.\d+))([eE][+-]?\d+)?\s*(day|hr|min|msec|usec|sec)s?>/
+
 syn match zeekHost /\v[A-Za-z0-9][A-Za-z0-9\-]*(\.[A-Za-z0-9][A-Za-z0-9\-]*)+/
 syn match zeekAddr /\v(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{1,2})\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{1,2})\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{1,2})\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{1,2})/
 " This IPv6 regex may not be 100% correct.  The real deal takes some effort.
