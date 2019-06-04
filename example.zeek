@@ -124,7 +124,7 @@ event zeek_init()
   print 1 & 0xff;
   print 2 ^ 5;
 
-  myfunction("hello function");
+  myfunction ("hello function");
   hook myhook("hell hook");
   event myevent("hello event");
   schedule 1sec { myevent("hello scheduled event") };

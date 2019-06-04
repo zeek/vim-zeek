@@ -24,7 +24,7 @@ syn match zeekFmtSpec /\v\%\-?\d*(\.\d+)?[DTdxsefg]/ contained
 syn keyword zeekModule module nextgroup=zeekModuleID skipwhite
 syn match zeekModuleID /\v<([A-Za-z_][A-Za-z_0-9]*)(::[A-Za-z_][A-Za-z_0-9]*)*>/ contained
 
-syn match zeekCall /\v<([A-Za-z_][A-Za-z_0-9]*)(::[A-Za-z_][A-Za-z_0-9]*)*>(\()@=/
+syn match zeekCall /\v<([A-Za-z_][A-Za-z_0-9]*)(::[A-Za-z_][A-Za-z_0-9]*)*>(\s*\()@=/
 
 syn keyword zeekExport export
 
