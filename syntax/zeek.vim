@@ -11,7 +11,7 @@ syn keyword zeekTodo TODO XXX FIXME NOTE contained
 
 syn match zeekDirective /\v\@(DEBUG|DIR|FILENAME)/
 syn match zeekDirective /\v\@(deprecated)/
-syn match zeekDirective /\v\@(if|ifdef|ifndef|else|endif)/
+syn match zeekDirective /\v\@(ifdef|ifndef|else|endif|if)/
 syn match zeekDirective /\v\@prefixes\s*\+?\=\s*/ nextgroup=zeekDirectiveArg
 syn match zeekDirective /\v\@(load-plugin|load-sigs|load|unload)\s+/ nextgroup=zeekDirectiveArg
 syn match zeekDirectiveArg /.*/ contained
