@@ -14,7 +14,7 @@ syn match zeekDirective /\v\@(deprecated)/
 syn match zeekDirective /\v\@(ifdef|ifndef|else|endif|if)/
 syn match zeekDirective /\v\@prefixes\s*\+?\=\s*/ nextgroup=zeekDirectiveArg
 syn match zeekDirective /\v\@(load-plugin|load-sigs|load|unload)\s+/ nextgroup=zeekDirectiveArg
-syn match zeekDirectiveArg /.*/ contained
+syn match zeekDirectiveArg /\v[^ #]*/ contained
 
 syn region zeekString matchgroup=zeekSeparator start=/"/ skip=/\\"/ end=/"/ contains=zeekEscapeChar,zeekFmtSpec
 syn region zeekPattern matchgroup=zeekSeparator start=/\v\/(.*\/)@=/ skip=/\\\// end=/\// contains=zeekEscapeChar
