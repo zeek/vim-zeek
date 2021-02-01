@@ -30,6 +30,7 @@ syn keyword zeekExport export
 
 syn keyword zeekRedef redef
 syn keyword zeekPrint print
+syn keyword zeekCopy copy
 syn keyword zeekAsync when timeout schedule
 syn keyword zeekConditional if else switch
 syn keyword zeekLoop for while
@@ -145,6 +146,7 @@ highlight link zeekModule Keyword
 highlight link zeekRedef Keyword
 highlight link zeekExport Keyword
 highlight link zeekPrint Keyword
+highlight link zeekCopy Keyword
 highlight link zeekAsync Keyword
 highlight link zeekKeyword Keyword
 
