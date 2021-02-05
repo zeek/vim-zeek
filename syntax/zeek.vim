@@ -101,7 +101,7 @@ syn match zeekOperator /\v\|\|/
 syn match zeekOperator /\v\$/
 syn match zeekOperator /\v\?\$/
 
-syn match zeekAttribute /\v\&<(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type)>/
+syn match zeekAttribute /\v\&<(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned)>/
 
 highlight link zeekTodo    Todo
 highlight link zeekComment Comment
