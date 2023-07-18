@@ -2,7 +2,7 @@
 " Language: Zeek (https://zeek.org)
 " Author: Jon Siwek
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
@@ -155,4 +155,4 @@ highlight link zeekKeyword Keyword
 
 " TODO Could add Structure group to enum/record (re)definitions
 
-let b:current_syntax = "zeek"
+let b:current_syntax = 'zeek'
