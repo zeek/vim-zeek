@@ -11,6 +11,7 @@ syn keyword zeekTodo TODO XXX FIXME NOTE contained
 
 syn match zeekDirective /\v\@(DEBUG|DIR|FILENAME)/
 syn match zeekDirective /\v\@(deprecated)/
+syn match zeekDirective /\v\@pragma(\s+[^[:space:]]+)?\s*/ nextgroup=zeekDirectiveArg
 syn match zeekDirective /\v\@(ifdef|ifndef|else|endif|if)/
 syn match zeekDirective /\v\@prefixes\s*\+?\=\s*/ nextgroup=zeekDirectiveArg
 syn match zeekDirective /\v\@(load-plugin|load-sigs|load|unload)\s+/ nextgroup=zeekDirectiveArg
@@ -28,6 +29,7 @@ syn match zeekCall /\v<([A-Za-z_][A-Za-z_0-9]*)(::[A-Za-z_][A-Za-z_0-9]*)*>(\s*\
 
 syn keyword zeekExport export
 
+syn keyword zeekAssert assert
 syn keyword zeekRedef redef
 syn keyword zeekPrint print
 syn keyword zeekCopy copy
@@ -101,7 +103,7 @@ syn match zeekOperator /\v\|\|/
 syn match zeekOperator /\v\$/
 syn match zeekOperator /\v\?\$/
 
-syn match zeekAttribute /\v\&<(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned|is_used)>/
+syn match zeekAttribute /\v\&<(redef|priority|log|optional|default|default_insert|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned|is_used)>/
 
 highlight link zeekTodo    Todo
 highlight link zeekComment Comment
@@ -143,6 +145,7 @@ highlight link zeekLoop Repeat
 highlight link zeekLabel Label
 
 highlight link zeekModule Keyword
+highlight link zeekAssert Keyword
 highlight link zeekRedef Keyword
 highlight link zeekExport Keyword
 highlight link zeekPrint Keyword
