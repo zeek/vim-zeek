@@ -1,3 +1,4 @@
-if has("autocmd")
-  au BufNewFile,BufRead *.bro,*.zeek setfiletype zeek
+if has('autocmd')
+  augroup zeek
+  autocmd BufNewFile,BufRead *.bro,*.zeek setfiletype zeek
 endif
