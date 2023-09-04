@@ -1,0 +1,76 @@
+" This test cases and requires installation of the Vader testing
+" framework, https://github.com/junegunn/vader.vim. After installing the plugin
+" tests in the current buffer can be executed with `:Vader`. To execute all
+" tests run e.g., `:Vader test/*`.
+
+Given zeek (@TEST-EXEC):
+  # @TEST-EXEC: foo
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 15), "zeekBTestExec"
+
+Given zeek (@TEST-START-FILE):
+  # @TEST-START-FILE foo.zeek
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 20), "zeekBTest"
+
+Given zeek (@TEST-START-NEXT):
+  # @TEST-START-NEXT
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+
+Given zeek (@TEST-REQUIRES):
+  # @TEST-REQUIRES: true
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 19), "shStatement"
+
+Given zeek (@TEST-END-FILE):
+  # @TEST-END-FILE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+
+Given zeek (@TEST-IGNORE):
+  # @TEST-IGNORE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+
+Given zeek (@TEST-DOC):
+  # @TEST-DOC: foo
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 15), "zeekBTest"
+
+Given zeek (@TEST-GROUP):
+  # @TEST-GROUP: foo
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 17), "zeekBTest"
+
+Given zeek (@TEST-PORT):
+  # @TEST-PORT: MY_PORT
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+  AssertEqual SyntaxAt(1, 17), "zeekBTest"
+
+Given zeek (@TEST-MEASURE-TIME):
+  # @TEST-MEASURE-TIME
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"
+
+Given zeek (@TEST-KNOWN-FAILURE):
+  # @TEST-KNOWN-FAILURE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "zeekComment"
+  AssertEqual SyntaxAt(1, 3), "zeekBTestKeyword"

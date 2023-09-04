@@ -6,8 +6,17 @@ if exists('b:current_syntax')
   finish
 endif
 
+" For highlighting payloads to `@TEST-EXEC*`.
+syntax include @zeekSh syntax/sh.vim
+
 syn match zeekComment /#.*/ contains=zeekTodo
 syn keyword zeekTodo TODO XXX FIXME NOTE contained
+
+syntax match zeekBTest /\v\@TEST(-\w+)+:?.*/ containedin=zeekComment containedin=ALL " This group only resets syntax.
+syntax region zeekBTestExec start=/@TEST-\(EXEC\|REQUIRES\).\{-}\s/ end=/$/ containedin=zeekBTest contains=@zeekSh
+syntax match zeekBTestKeyword /@TEST-.\{-}\s/ containedin=zeekBTestExec containedin=zeekBTestOther
+" Extra case for keywords which do not take args or no shell commands.
+syntax match zeekBTestKeyword /@TEST-\(DOC\|END-FILE\|GROUP\|IGNORE\|KNOWN-FAILURE\|MEASURE-TIME\|PORT\|START-FILE\|START-NEXT\)/ containedin=zeekBTest
 
 syn match zeekDirective /\v\@(DEBUG|DIR|FILENAME)/
 syn match zeekDirective /\v\@(deprecated)/
@@ -109,6 +118,9 @@ highlight link zeekTodo    Todo
 highlight link zeekComment Comment
 highlight link zeekDirective PreProc
 highlight link zeekDirectiveArg Underlined
+
+highlight link zeekBTestKeyword SpecialComment
+highlight link zeekBTestOther SpecialComment
 
 highlight link zeekString String
 highlight link zeekPattern String
