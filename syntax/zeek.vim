@@ -66,6 +66,7 @@ syn match zeekAddr /\v\[([0-9a-fA-F]{0,4}:){2,7}([0-9a-fA-F]{0,4})((25[0-5]|2[0-
 syn keyword zeekTypeDef type
 
 syn keyword zeekType any
+syn keyword zeekType connection
 syn keyword zeekType enum record set table vector
 syn keyword zeekType addr bool count double file int interval pattern port
 syn keyword zeekType string subnet time
