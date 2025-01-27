@@ -115,56 +115,56 @@ syn match zeekOperator /\v\?\$/
 
 syn match zeekAttribute /\v\&<(redef|priority|log|optional|ordered|default|default_insert|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned|is_used|group)>/
 
-highlight link zeekTodo    Todo
-highlight link zeekComment Comment
-highlight link zeekDirective PreProc
-highlight link zeekDirectiveArg Underlined
+highlight default link zeekTodo    Todo
+highlight default link zeekComment Comment
+highlight default link zeekDirective PreProc
+highlight default link zeekDirectiveArg Underlined
 
-highlight link zeekBTestKeyword SpecialComment
-highlight link zeekBTestOther SpecialComment
+highlight default link zeekBTestKeyword SpecialComment
+highlight default link zeekBTestOther SpecialComment
 
-highlight link zeekString String
-highlight link zeekPattern String
-highlight link zeekSeparator Delimiter
-highlight link zeekEscapeChar SpecialChar
-highlight link zeekFmtSpec Special
+highlight default link zeekString String
+highlight default link zeekPattern String
+highlight default link zeekSeparator Delimiter
+highlight default link zeekEscapeChar SpecialChar
+highlight default link zeekFmtSpec Special
 
-highlight link zeekType Type
-highlight link zeekTypeDef Typedef
-highlight link zeekTypeMod StorageClass
-highlight link zeekAttribute StorageClass
+highlight default link zeekType Type
+highlight default link zeekTypeDef Typedef
+highlight default link zeekTypeMod StorageClass
+highlight default link zeekAttribute StorageClass
 
-highlight link zeekBool Boolean
-highlight link zeekInt Number
-highlight link zeekFloat Float
-highlight link zeekAddr Constant
-highlight link zeekHost Constant
-highlight link zeekPort Constant
-highlight link zeekInterval Constant
+highlight default link zeekBool Boolean
+highlight default link zeekInt Number
+highlight default link zeekFloat Float
+highlight default link zeekAddr Constant
+highlight default link zeekHost Constant
+highlight default link zeekPort Constant
+highlight default link zeekInterval Constant
 
-highlight link zeekOperator Operator
-highlight link zeekOpaqueOf Keyword
-highlight link zeekOperatorWord Keyword
-highlight link zeekTableOp Keyword
+highlight default link zeekOperator Operator
+highlight default link zeekOpaqueOf Keyword
+highlight default link zeekOperatorWord Keyword
+highlight default link zeekTableOp Keyword
 
-highlight link zeekID Identifier
-highlight link zeekModuleID Identifier
-highlight link zeekOpaqueID Type
-highlight link zeekCall Identifier
+highlight default link zeekID Identifier
+highlight default link zeekModuleID Identifier
+highlight default link zeekOpaqueID Type
+highlight default link zeekCall Identifier
 
-highlight link zeekConditional Conditional
-highlight link zeekControlFlow Keyword
-highlight link zeekLoop Repeat
-highlight link zeekLabel Label
+highlight default link zeekConditional Conditional
+highlight default link zeekControlFlow Keyword
+highlight default link zeekLoop Repeat
+highlight default link zeekLabel Label
 
-highlight link zeekModule Keyword
-highlight link zeekAssert Keyword
-highlight link zeekRedef Keyword
-highlight link zeekExport Keyword
-highlight link zeekPrint Keyword
-highlight link zeekCopy Keyword
-highlight link zeekAsync Keyword
-highlight link zeekKeyword Keyword
+highlight default link zeekModule Keyword
+highlight default link zeekAssert Keyword
+highlight default link zeekRedef Keyword
+highlight default link zeekExport Keyword
+highlight default link zeekPrint Keyword
+highlight default link zeekCopy Keyword
+highlight default link zeekAsync Keyword
+highlight default link zeekKeyword Keyword
 
 " TODO Could add Structure group to enum/record (re)definitions
 

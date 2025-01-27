@@ -1,0 +1,33 @@
+" This test cases and requires installation of the Vader testing
+" framework, https://github.com/junegunn/vader.vim. After installing the plugin
+" tests in the current buffer can be executed with `:Vader`. To execute all
+" tests run e.g., `:Vader test/*`.
+
+Given bif (C++ block delimiters):
+  %{ %}
+  %%{ %%}
+Execute:
+  AssertEqual SyntaxAt(1, 1), "bifCppDelim"
+  AssertEqual SyntaxAt(1, 4), "bifCppDelim"
+  AssertEqual SyntaxAt(2, 1), "bifCppDelim"
+  AssertEqual SyntaxAt(2, 5), "bifCppDelim"
+
+Given bif (Zeek arg delimiters):
+  %( %)
+Execute:
+  AssertEqual SyntaxAt(1, 1), "bifCppDelim"
+  AssertEqual SyntaxAt(1, 4), "bifCppDelim"
+
+Given bif (special tokens):
+  function foo%(...%): string %{ @ARG@; %}
+  function foo%(...%): string %{ printf("%s", @ARG@[1]); %}
+Execute:
+  AssertEqual SyntaxAt(1, 33), "bifTok"
+  AssertEqual SyntaxAt(2, 45), "bifTok"
+
+Given bif (C++ body):
+  function foo%(...%): string %{ 123; %}
+  function foo%(...%): string %%{ 123; %%}
+Execute:
+  AssertEqual SyntaxAt(1, 33), "cppNumber"
+  AssertEqual SyntaxAt(2, 34), "cppNumber"
